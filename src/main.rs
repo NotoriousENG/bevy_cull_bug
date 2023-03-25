@@ -9,7 +9,7 @@ fn main() {
         .run();
 }
 
-const FAR: f32 = 10.00;
+const FAR: f32 = 15.00;
 /// set up a simple 3D scene
 fn setup(
     mut commands: Commands,
@@ -22,6 +22,7 @@ fn setup(
     commands.spawn(Camera3dBundle {
         projection: PerspectiveProjection {
             far: FAR,
+            use_far_culling: true,
             ..default()
         }
         .into(),
